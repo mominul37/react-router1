@@ -8,31 +8,41 @@ import Contact from './Pages/Contact.jsx'
 import About from './Pages/About.jsx'
 import Footer from './Components/Footer.jsx'
 import Navbar from './Components/Navbar.jsx'
+import RootLayOut from './Layout/RootLayOut.jsx'
+import PlantCard from './Components/PlantCard.jsx'
 const router = createBrowserRouter([
- 
   {
-    index:true,
-    element:<Home/>
+    path: '/',
+    Component: RootLayOut,
   },
   {
-    path:"/Contact",
-    element:<Contact/>
+    path: '/Home',
+    element: <Home />
   },
   {
-    path:"/About",
-    element:<About/>
+    path: "/Contact",
+    element: <Contact />
   },
   {
-    path:"/Footer",
-    element:<Footer/>
+    path: "/About",
+    element: <About />
   },
   {
-    path:"/Navbar",
-    element:<Navbar/>
+    path: "/Footer",
+    element: <Footer />
   },
+  {
+    path: "/Navbar",
+    element: <Navbar />
+  },
+  {
+    path:"/plantcard",
+    Component:PlantCard,
+  }
+  
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={ router } />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
